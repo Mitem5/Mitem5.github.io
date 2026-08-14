@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CV - Brumaire Lorenz</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            padding: 30px;
+            background-color: #f2f2f2;
+            font-family: Verdana, sans-serif;
+            color: #222;
+
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        #themeButton {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+
+            padding: 12px 18px;
+
+            border: 3px solid black;
+            border-radius: 20px;
+
+            background-color: white;
+            color: black;
+
+            font-size: 15px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow: 3px 3px 8px #555;
+
+            transition: 0.3s;
+        }
+
+        #themeButton:hover {
+            transform: scale(1.05);
+        }
+
+        #cv {
+            width: 120px;
+            height: 120px;
+
+            margin: 0 auto 30px auto;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: white;
+            font-size: 45px;
+
+            background-color: rgb(255, 76, 76);
+            border: 8px solid black;
+            border-radius: 50%;
+
+            box-shadow: 5px 5px 10px #555;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+
+            margin-bottom: 40px;
+        }
+
+        #photo {
+            width: 110px;
+            height: 130px;
+
+            object-fit: cover;
+
+            border: 6px solid black;
+            background-color: red;
+        }
+
+        .nom {
+            font-size: 35px;
+            margin: 0;
+            text-shadow: 6px 6px 20px rgb(88, 88, 88);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+        .box {
+            box-sizing: border-box;
+
+            min-height: 180px;
+
+            padding: 25px;
+
+            border: 5px solid black;
+            border-radius: 30px;
+
+            background-color: lightgrey;
+
+            box-shadow: 6px 6px 20px rgb(88, 88, 88);
+
+            font-size: 18px;
+
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .box h2 {
+            margin-top: 0;
+            margin-bottom: 15px;
+
+            font-size: 25px;
+            text-transform: capitalize;
+        }
+
+        .boxcontact {
+            background-color: #e9e8e8;
+        }
+
+        .boxdomicile {
+            background-color: #e9e8e8;
+        }
+
+        .boxparcour {
+            background-color: #e9e8e8;
+        }
+
+        .boxfort {
+            background-color: #e9e8e8;
+        }
+
+        .boxinteret {
+            background-color: #e9e8e8;
+        }
+
+        ul {
+            font-size: 18px;
+            line-height: 1.8;
+            padding-left: 25px;
+        }
+
+        a {
+            color: #0057b8;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        a:hover {
+            font-size: 105%;
+            text-decoration: underline;
+        }
+
+        .youtube-logo {
+            width: 40px;
+            height: 40px;
+
+            object-fit: contain;
+
+            vertical-align: middle;
+
+            margin-left: 10px;
+        }
+
+        .jaiden-logo {
+            width: 130px;
+            height: 40px;
+
+            object-fit: contain;
+
+            vertical-align: middle;
+
+            margin-left: 10px;
+        }
+
+        body.dark {
+            background-color: #181818;
+            color: #eeeeee;
+        }
+
+        body.dark #themeButton {
+            background-color: #333333;
+            color: white;
+            border-color: white;
+        }
+
+        body.dark #cv {
+            border-color: white;
+        }
+
+        body.dark #photo {
+            border-color: white;
+        }
+
+        body.dark .box {
+            border-color: white;
+            box-shadow: 8px 8px 12px #000;
+        }
+
+        /* Couleurs des cases en mode sombre */
+
+        body.dark .boxcontact {
+            background-color: #656565;
+        }
+
+        body.dark .boxdomicile {
+            background-color: #656565;
+        }
+
+        body.dark .boxparcour {
+            background-color: #656565;
+        }
+
+        body.dark .boxfort {
+            background-color: #656565;
+        }
+
+        body.dark .boxinteret {
+            background-color: #656565;
+        }
+
+        body.dark a {
+            color: #66b3ff;
+        }
+
+        @media (max-width: 700px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nom {
+                font-size: 28px;
+            }
+
+            #themeButton {
+                position: static;
+                display: block;
+                margin: 0 auto 20px auto;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <button id="themeButton" onclick="changerTheme()">
+        🌙 Mode sombre
+    </button>
+
+
+    <h1 id="cv">CV</h1>
+
+
+    <div class="header">
+
+        <img
+            id="photo"
+            src="file:///C:/Users/maintenant%20pret/Downloads/IMG_2604.jpeg"
+            alt="Photo de Brumaire Lorenz"
+        >
+
+        <h1 class="nom">
+            Brumaire Lorenz
+        </h1>
+
+    </div>
+
+
+    <div class="container">
+
+
+        <div class="box boxcontact">
+
+            <h2>Contact</h2>
+
+            <ul>
+
+                <li>
+                    Téléphone : +41 78 226 40 88
+                </li>
+
+                <li>
+                    Mail :
+                    <a href="https://mail.google.com/">
+                        wankilbrumaire@gmail.com
+                    </a>
+                </li>
+
+                <li>
+                    Discord : mitem5
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="box boxdomicile">
+
+            <h2>Domicile</h2>
+
+            <p>
+
+                <a
+                    href="https://www.google.com/maps/place/83+Av.+de+Ripaille,+74200+Thonon-les-Bains"
+                    target="_blank"
+                >
+                    83 Avenue de Ripaille
+                </a>
+
+            </p>
+
+        </div>
+
+
+        <div class="box boxparcour">
+
+            <h2>Parcours</h2>
+
+            <p>
+
+                École :
+                <a
+                    href="https://edu.ge.ch/secondaire2/ecole-de-culture-generale-jean-piaget/accueil"
+                    target="_blank"
+                >
+                    ECG Jean-Piaget
+                </a>
+
+            </p>
+
+            <p>
+                Profession : N/A
+            </p>
+
+        </div>
+
+
+        <div class="box boxfort">
+
+            <h2>Points forts</h2>
+
+            <ul>
+
+                <li>
+                    Ponctualité
+                </li>
+
+                <li>
+                    Capacité d’adaptation
+                </li>
+
+                <li>
+                    Prise d’initiative
+                </li>
+
+                <li>
+                    Langue : français
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="box boxinteret">
+
+            <h2>Centres d'intérêt</h2>
+
+            <p>
+
+                Musique :
+                <a
+                    href="https://piapro.net/intl/en.html"
+                    target="_blank"
+                >
+                    Hatsune Miku
+                </a>
+
+            </p>
+
+
+            <p>
+                YouTube :
+            </p>
+
+            <ul>
+
+                <li>
+
+                    <a
+                        href="https://www.youtube.com/@jaidenanimations"
+                        target="_blank"
+                    >
+                        Jaiden Animations
+                    </a>
+
+                    <img
+                        class="jaiden-logo"
+                        src="https://static.wikia.nocookie.net/logopedia/images/d/dc/Jaiden_Animations_2015.png"
+                        alt="Logo Jaiden Animations"
+                    >
+
+                </li>
+
+
+                <li>
+
+                    <a
+                        href="https://www.youtube.com/@codebh"
+                        target="_blank"
+                    >
+                        Code BH
+                    </a>
+
+                    <img
+                        class="youtube-logo"
+                        src="https://yt3.googleusercontent.com/Fn9pQr4W3QLukzl6Xcfy9zt3nyIfvfhLaCqkMgND187RX89OWquBnRq4r_QwGE8y8SZxn-Jy=s900-c-k-c0x00ffffff-no-rj"
+                        alt="Logo Code BH"
+                    >
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function changerTheme() {
+
+            document.body.classList.toggle("dark");
+
+            const bouton = document.getElementById("themeButton");
+
+            if (document.body.classList.contains("dark")) {
+
+                bouton.textContent = "☀️ Mode clair";
+
+            } else {
+
+                bouton.textContent = "🌙 Mode sombre";
+
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
